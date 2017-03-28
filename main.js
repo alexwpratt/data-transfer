@@ -132,4 +132,5 @@ app.on('ready', function()  {
 
 
 // include other files
-require('./autolaunch');
+require('./app/autolaunch');
+require('./app/cron');
