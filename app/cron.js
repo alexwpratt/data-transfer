@@ -1,5 +1,9 @@
 //CRON---------------------------------------------------------------------------------------------------------------------------------
-require('./constants');
+// require('./constants');
+//path configuration:------------------------------------------------------
+const ComidaGP_exe_path = 'C:\\R365\\ComidaGP.exe'; //official path per Matthew Bair
+
+
 
 var CronJob = require('cron').CronJob;
 
