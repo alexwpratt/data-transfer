@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Data Transfer</title>
+        <style>
+            body {
+                background-color: #cc3333;
+                text-align: center;
+            }
+
+            button {
+                background-color: white;
+                border: 2px solid dimgrey;
+                color: dimgrey;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+            }
+
+            button:hover {
+                background-color: dimgrey;
+                color: white;
+            }
+
+            footer {
+                position: absolute;
+                bottom: 5%;
+                text-align: center;
+                width: 100%;
+            }
+        </style>
+        <script src="main.js"></script>
+    </head>
+
+    <body>
+        <h1>Data Transfer</h1>
+        <!-- All of the Node.js APIs are available in this renderer process. -->
+
+        <button onclick="run_Comida()">Transfer Data</button>
+        <br><br>
+        <button onclick="run_Comida_config()">Configure</button>
+        <br><br>
+        Current version: <span id="version">vX.Y.Z</span>
+        <br><br>
+        <div id="messages"></div>
+    </body>
+
+    <footer>
+        &copy; Copyright 2017, Restaurant365, LLC
+    </footer>
+
+
+    <script>
+        // Display the current version:
+        let version = window.location.hash.substring(1);
+        document.getElementById('version').innerText = version;
+
+        // Listen for messages
+        const {ipcRenderer} = require('electron');
+        ipcRenderer.on('message', function(event, text) {
+            var container = document.getElementById('messages');
+            var message = document.createElement('div');
+            message.innerHTML = text;
+            container.appendChild(message);
+        })
+
+        //action events:---------------------------------------------------
+        function run_Comida(){
+            const execFile = require('child_process').execFile;
+            const child = execFile(ComidaGP_exe_path, ['run'], {});
+        }
+
+        function run_Comida_config(){
+            const execFile = require('child_process').execFile;
+            const child = execFile(ComidaGP_exe_path, [], {});
+        }
+
+        document.getElementById('version').innerHTML = version;
+        // You can also require other files to run in this process
+        require('./renderer.js')
+    </script>
+</html>

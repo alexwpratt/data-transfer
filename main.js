@@ -60,11 +60,11 @@ function sendStatusToWindow(text) {
 }
 function createDefaultWindow() {
   win = new BrowserWindow();
-  win.webContents.openDevTools();
+  // win.webContents.openDevTools();
   win.on('closed', () => {
     win = null;
   });
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
+  win.loadURL(`file://${__dirname}/index.html#v${app.getVersion()}`);
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
@@ -93,7 +93,7 @@ app.on('ready', function() {
   createDefaultWindow();
 });
 app.on('window-all-closed', () => {
-  app.quit();
+  app.quit(); //// comment out line to not close the app, even when they close the window, so it continues to run in the backgroun unless they stop it from the task manager
 });
 
 //-------------------------------------------------------------------

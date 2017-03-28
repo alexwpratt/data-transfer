@@ -1,9 +1,10 @@
 {
   "name": "data-transfer",
-  "version": "0.5.3",
-  "main": "main.js",
-  "description": "Data Transfer",
+  "productName": "Data Transfer",
+  "version": "0.5.4",
+  "description": "Restaurant365 - Data Transfer",
   "author": "Alex Wilcken Pratt",
+  "main": "main.js",
   "devDependencies": {
     "electron": "^1.4.15",
     "electron-builder": "^12.3.1"
