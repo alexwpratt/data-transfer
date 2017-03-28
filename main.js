@@ -1,4 +1,4 @@
-// Copyright (c) Alex Wilcken Pratt
+// Copyright (c) Restaurant365 - Alex Wilcken Pratt
 // See LICENSE for details.
 
 const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
@@ -93,7 +93,7 @@ app.on('ready', function() {
   createDefaultWindow();
 });
 app.on('window-all-closed', () => {
-  app.quit(); //// comment out line to not close the app, even when they close the window, so it continues to run in the backgroun unless they stop it from the task manager
+  //app.quit(); //// comment out line to not close the app, even when they close the window, so it continues to run in the backgroun unless they stop it from the task manager
 });
 
 //-------------------------------------------------------------------
