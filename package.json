@@ -1,7 +1,7 @@
 {
   "name": "data-transfer",
   "productName": "Data Transfer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Restaurant365 - Data Transfer",
   "author": "Alex Wilcken Pratt",
   "main": "main.js",
