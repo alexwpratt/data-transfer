@@ -1,11 +1,8 @@
 // Copyright (c) Restaurant365 - Alex Wilcken Pratt
 // See LICENSE for details.
 
-// require('./app/constants');
 //path configuration:------------------------------------------------------
 const ComidaGP_exe_path = 'C:\\R365\\ComidaGP.exe'; //official path per Matthew Bair
-
-
 
 const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
 const log = require('electron-log');
