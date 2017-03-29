@@ -36,17 +36,26 @@
         <script src="main.js"></script>
     </head>
 
-    <body>
+    <header>
         <h1>Data Transfer</h1>
+    </header>
+    <body>
         <!-- All of the Node.js APIs are available in this renderer process. -->
+        <section>
+            <button onclick="run_Comida()">Transfer Data</button>
+            <br><br>
+            <button onclick="run_Comida_config()">Configure</button>
+            <br><br>
+            Set ComidaGP.exe file path here: <input type="file" id="fileinput">
+           <!--<input type="file" id="fileinput" />-->
 
-        <button onclick="run_Comida()">Transfer Data</button>
+        </section>
         <br><br>
-        <button onclick="run_Comida_config()">Configure</button>
-        <br><br>
-        Current version: <span id="version">vX.Y.Z</span>
-        <br><br>
-        <div id="messages"></div>
+        <aside>
+            Current version: <span id="version">vX.Y.Z</span>
+            <br><br>
+            <div id="messages"></div>
+        </aside>
     </body>
 
     <footer>
@@ -55,6 +64,19 @@
 
 
     <script>
+        //file upload:----------------------------------------------------
+        document.getElementById('fileinput').addEventListener('change', function(){
+        var file = this.files[0];
+            // This code is only for demo ...
+            console.log("name : " + file.name);
+            console.log("size : " + file.size);
+            console.log("type : " + file.type);
+            console.log("date : " + file.lastModified);
+            console.log("path : " + file.path);
+        }, false);
+        
+
+        //version:--------------------------------------------------------
         // Display the current version:
         let version = window.location.hash.substring(1);
         document.getElementById('version').innerText = version;
@@ -81,6 +103,6 @@
 
         document.getElementById('version').innerHTML = version;
         // You can also require other files to run in this process
-        require('./renderer.js')
+        // require('./renderer.js')
     </script>
 </html>
