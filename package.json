@@ -1,7 +1,7 @@
 {
   "name": "data-transfer",
   "productName": "Data Transfer",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Restaurant365 - Data Transfer",
   "author": "Alex Wilcken Pratt",
   "main": "main.js",
@@ -28,5 +28,11 @@
     "nsis": {
       "perMachine": true
     }
+  },
+  "scripts": {
+    "start": "electron .",
+    "build-mac": "build --mac",
+    "build-win": "build --win --ia32",
+    "build-all": "build --win --ia32  --x64 --mac"
   }
 }
