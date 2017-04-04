@@ -2,8 +2,6 @@
 // See LICENSE for details.
 
 //path configuration:------------------------------------------------------
-const ComidaGP_exe_path = 'C:\\R365\\ComidaGP.exe'; //official path per Matthew Bair
-
 const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
 const log = require('electron-log');
 const {autoUpdater} = require("electron-updater");
