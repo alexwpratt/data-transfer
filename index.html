@@ -32,23 +32,44 @@
                 text-align: center;
                 width: 100%;
             }
+
+            section {
+                float: left;
+                text-align: center;
+                max-width: 400px;
+                margin: 0;
+                padding: 1em;
+            }
+
+            aside {
+                margin-left: 410px;
+                padding: 1em;
+                text-align: left;
+                overflow: auto;
+            }
         </style>
         <script src="./app/cron.js"></script>
     </head>
 
     <header>
         <h1>Data Transfer</h1>
+        <hr>
     </header>
     <body>
         <!-- All of the Node.js APIs are available in this renderer process. -->
         <section>
-            <button onclick="run_Comida()">Transfer Data</button>
-            <br><br>
-            <button onclick="run_Comida_config()">Configure</button>
-            <br><br>
-            Set ComidaGP.exe file path here: <input type="file" id="fileinput">
-           <!--<input type="file" id="fileinput" />-->
-
+            <br>
+            <p>
+                <button onclick="run_Comida()">Transfer Data</button>
+            </p>
+            <br>
+            <p>
+                <button onclick="run_Comida_config()">Configure</button>
+            <p>
+            <br>
+            <p>
+                Set ComidaGP.exe file path here: <input type="file" id="fileinput">
+            </p>
         </section>
         <br><br>
         <aside>
@@ -98,14 +119,14 @@
                 const execFile = require('child_process').execFile;
                 const child = execFile(ComidaGP_exe_path, ['run'], (error, stdout, stderr) => {
                     if (error) {
-                        alert('Error: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                        alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
                         throw error;
                     }
-                    console.log(stdout);
+                    // console.log(stdout);
                 });
             }
             catch(err) {
-                alert('The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
             }
         }
 
@@ -115,14 +136,14 @@
                 const execFile = require('child_process').execFile;
                 const child = execFile(ComidaGP_exe_path, [''], (error, stdout, stderr) => {
                     if (error) {
-                        alert('Error: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                        alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
                         throw error;
                     }
-                    console.log(stdout);
+                    // console.log(stdout);
                 });
             }
             catch(err) {
-                alert('The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
             }
         }
 

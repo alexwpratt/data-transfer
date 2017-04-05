@@ -14,14 +14,14 @@ try {
                 const execFile = require('child_process').execFile;
                 const child = execFile(ComidaGP_exe_path, ['run'], (error, stdout, stderr) => {
                     if (error) {
-                        alert('Error: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                        alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
                         throw error;
                     }
-                    console.log(stdout);
+                    // console.log(stdout);
                 });
             }
             catch(err) {
-                alert('The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
+                alert('ERROR: The ComidaGP.exe file was not found in the default location. Please select the file manually with the "Choose File" button below.');
             }
         },
         null, true, null);
